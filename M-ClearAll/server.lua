@@ -11,7 +11,7 @@ if args[1]:lower() == "cars" then
       color = {255, 255, 255},
       multiline = false,
       args = {"[^1SYSTEM^7] " ..GetPlayerName(source).. " ^7Cleared Most Vehicles From the Server"}})
-      TriggerEvent("M:SendToDisc", "A Staff Member Cleared All " ..args[1].. " From the map", "[" ..source.. "] " ..GetPlayerName(source).. " Cleared all " ..args[1].. " from the map.")
+      TriggerEvent("M:Webhook", "A Staff Member Cleared All " ..args[1].. " From the map", "[" ..source.. "] " ..GetPlayerName(source).. " Cleared all " ..args[1].. " from the map.")
 
 elseif args[1]:lower() == "props" then 
    TriggerClientEvent("M:ClearAll:Props", -1)
@@ -20,7 +20,7 @@ elseif args[1]:lower() == "props" then
       color = {255, 255, 255},
       multiline = false,
       args = {"[^1SYSTEM^7] " ..GetPlayerName(source).. " ^7Cleared Most Props From the Server"}})
-      TriggerEvent("M:SendToDisc", "A Staff Member Cleared All " ..args[1].. " From the map", "[" ..source.. "] " ..GetPlayerName(source).. " Cleared all " ..args[1].. " from the map.")
+      TriggerEvent("M:Webhook", "A Staff Member Cleared All " ..args[1].. " From the map", "[" ..source.. "] " ..GetPlayerName(source).. " Cleared all " ..args[1].. " from the map.")
 
 elseif args[1]:lower() == "peds" then
    TriggerClientEvent("M:ClearAll:Peds", -1)
@@ -29,7 +29,7 @@ elseif args[1]:lower() == "peds" then
       color = {255, 255, 255},
       multiline = false,
       args = {"[^1SYSTEM^7] " ..GetPlayerName(source).. " ^7Cleared Most Peds From the Server"}})
-      TriggerEvent("M:SendToDisc", "A Staff Member Cleared All " ..args[1].. " From the map", "[" ..source.. "] " ..GetPlayerName(source).. " Cleared all " ..args[1].. " from the map.")
+      TriggerEvent("M:Webhook", "A Staff Member Cleared All " ..args[1].. " From the map", "[" ..source.. "] " ..GetPlayerName(source).. " Cleared all " ..args[1].. " from the map.")
    
 elseif args[1]:lower() == "all" then 
    TriggerClientEvent("M:ClearAll:All", -1)
@@ -38,14 +38,14 @@ elseif args[1]:lower() == "all" then
       color = {255, 255, 255},
       multiline = false,
       args = {"[^1SYSTEM^7] " ..GetPlayerName(source).. " ^7Cleared Everything From the Server"}})
-      TriggerEvent("M:SendToDisc", "A Staff Member Cleared All " ..args[1].. " From the map", "[" ..source.. "] " ..GetPlayerName(source).. " Cleared everything from the map.")
+      TriggerEvent("M:Webhook", "A Staff Member Cleared All " ..args[1].. " From the map", "[" ..source.. "] " ..GetPlayerName(source).. " Cleared everything from the map.")
             end
          else
             TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'ERROR: It appears you did not place any arguments in the command. USAGE: /clearall [PROPS, PEDS, CARS, ALL]'})
       end
    else
       TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'error', text = 'ERROR: You do not have permission to use this command.'})
-      TriggerEvent("M:SendToDisc", "A Member executed a command without permission.", "[" ..source.. "] " ..GetPlayerName(source).. " Attempted to Clear All:" ..args[1].. " From the map without permission.")
+      TriggerEvent("M:Webhook", "A Member executed a command without permission.", "[" ..source.. "] " ..GetPlayerName(source).. " Attempted to Clear All:" ..args[1].. " From the map without permission.")
 
    end
 end)
